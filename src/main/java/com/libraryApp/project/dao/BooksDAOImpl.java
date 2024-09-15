@@ -33,4 +33,9 @@ public class BooksDAOImpl implements BooksDAO {
     public Books saveBook(Books books) {
         return entityManager.merge(books);
     }
+
+    @Override
+    public void delete(int id) {
+        Books books = entityManager.find(Books.class,id);
+    }
 }

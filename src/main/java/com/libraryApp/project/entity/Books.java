@@ -3,7 +3,7 @@ package com.libraryApp.project.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name = "books")
 public class Books {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -11,12 +11,13 @@ public class Books {
     private int id;
     @Column (name = "title_books")
     private String title;
-    @Column (name = "author")
+    @Column (name = "author_books")
     private String author;
     @Column (name = "page_number")
     private int pageNum;
     @Column (name = "rating")
     private int rating;
+
 
     public Books(int id, String title, String author, int pageNum, int rating) {
         this.id = id;

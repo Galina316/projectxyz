@@ -10,13 +10,10 @@ import java.util.List;
 @Service
 public class BooksServiceImpl implements BooksService{
     BooksDAO booksDAO;
-
     @Autowired
     public BooksServiceImpl(BooksDAO booksDAO) {
         this.booksDAO = booksDAO;
     }
-
-
 
     @Override
     public List<Books> findAll() {
@@ -27,10 +24,17 @@ public class BooksServiceImpl implements BooksService{
     public Books findById(int id) {
         return booksDAO.findById(id);
     }
-@Transactional
+
+    @Transactional
     @Override
     public Books saveBook(Books books) {
         return booksDAO.saveBook(books);
+    }
+
+    @Transactional
+    @Override
+    public void delete(int id) {
+        booksDAO.delete(id);
     }
 
 

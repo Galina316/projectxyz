@@ -17,6 +17,7 @@ public class BooksRestController {
     public BooksRestController(BooksService booksService){
         this.booksService=booksService;
     }
+
     @GetMapping("/books")
     public List<Books> getBooks(){return booksService.findAll();}
 
@@ -26,11 +27,19 @@ public class BooksRestController {
             throw new RuntimeException("No book with this id "+id);
         return booksService.findById(id);
     }
-    @PostMapping("/books")
+    @PostMapping("/book")
     //Request bean is translate to jason
     public Books addBook (@RequestBody Books employee) {
         employee.setId(0);
         Books book = booksService.saveBook(employee);
         return book;
+    }
+
+    @DeleteMapping ("/book/{id}")
+    public String deleteBook(@PathVariable int id){
+        Books books= booksService.findById(id);
+        if(books==null)return "No book with id "+id;
+       else booksService.delete(id);
+        return "Book deleted from table with id "+id;
     }
 }
