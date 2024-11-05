@@ -34,6 +34,7 @@ public class JournalDAOImpl implements JournalDAO {
     @Override
     public void delete(int id) {
         Journal journal = entityManager.find(Journal.class,id);
+        entityManager.remove(journal);
 
     }
 }

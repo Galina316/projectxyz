@@ -12,9 +12,5 @@ public class LibraryApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LibraryApplication.class, args);
 	}
-//private void createBook(BooksDAO booksDAO){
-//	System.out.println("Creating new books....");
-//	Book newBook = new Book();
-//	Book newBook1 = new Book(1,"Melania","melania Trump",255,5);
-//}
+
 }

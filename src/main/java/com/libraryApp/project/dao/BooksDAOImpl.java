@@ -35,7 +35,8 @@ public class BooksDAOImpl implements BooksDAO {
     }
 
     @Override
-    public void delete(int id) {
+    public void deleteById(int id) {
         Books books = entityManager.find(Books.class,id);
+        entityManager.remove(books);
     }
 }

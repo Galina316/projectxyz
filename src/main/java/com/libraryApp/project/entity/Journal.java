@@ -69,4 +69,15 @@ public class Journal {
     public void setRating(double rating) {
         this.rating = rating;
     }
+
+    @Override
+    public String toString() {
+        return "Journal{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", businessName='" + businessName + '\'' +
+                ", category='" + category + '\'' +
+                ", rating=" + rating +
+                '}';
+    }
 }

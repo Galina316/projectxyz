@@ -1,0 +1,6 @@
+1.CRUD op front end for books
+2.Logout button
+3.Validations into form for books ect/ put Validations annotations such as @NotEmpty and ect
+4.Set up security with DB
+5.Use cases (description) create story for create who can delete update ect roles connected
+Ex: User with role x can do log in log out log in books crud op page and do this action(s): retrive/get delete/update/create
